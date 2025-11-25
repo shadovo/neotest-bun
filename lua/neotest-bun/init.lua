@@ -201,26 +201,6 @@ Adapter = {
 			formatted_results[formatted_key] = result
 		end
 
-		local inspect = require("inspect")
-
-		-- Debug: Write XML content and parsed results to files for debugging
-		local debug_file_xml = io.open("./neotest-bun-debug-xml.txt", "w")
-		if debug_file_xml and false then
-			debug_file_xml:write("=== SPEC ===\n")
-			debug_file_xml:write(inspect(spec))
-			debug_file_xml:write("\n\n=== _RESULT ===\n")
-			debug_file_xml:write(inspect(_result))
-			debug_file_xml:write("\n\n=== TREE ===\n")
-			debug_file_xml:write(inspect(tree))
-			debug_file_xml:write("\n\n=== XML CONTENT ===\n")
-			debug_file_xml:write(xml_content)
-			debug_file_xml:write("\n\n=== RAW PARSED RESULTS ===\n")
-			debug_file_xml:write(inspect(results))
-			debug_file_xml:write("\n\n=== FORMATTED RESULTS ===\n")
-			debug_file_xml:write(inspect(formatted_results))
-			debug_file_xml:close()
-		end
-
 		return formatted_results
 	end,
 }
